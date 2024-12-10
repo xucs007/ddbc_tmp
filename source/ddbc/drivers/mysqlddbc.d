@@ -1085,8 +1085,6 @@ public:
             return 0;
         if (v.convertsTo!(long))
             return v.get!(long);
-	else if (v.convertsTo!(string))
-            return v.get!(string).to!long;
         throw new SQLException("Cannot convert field " ~ to!string(columnIndex) ~ ": '" ~ v.toString() ~ "' to long. type=" ~ v.type.to!string);
     }
     override ulong getUlong(int columnIndex) {
